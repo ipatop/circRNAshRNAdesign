@@ -33,3 +33,5 @@ Imports:
     TxDb.Mmusculus.UCSC.mm10.knownGene,
     TxDb.Rnorvegicus.UCSC.rn4.ensGene
 VignetteBuilder: knitr
+URL: https://github.com/ipatop/circRNAshRNAdesign
+BugReports: https://github.com/ipatop/circRNAshRNAdesign/issues
