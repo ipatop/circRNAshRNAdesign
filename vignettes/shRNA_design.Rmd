@@ -1,0 +1,85 @@
+---
+title: "shRNA design to target circRNAs"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{shRNA design to target circRNAs}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+#install library
+devtools::install_github("ipatop/circRNAshRNAdesign")
+library(circRNAshRNAdesign)
+```
+
+# Description
+
+This package contains ONE function that will generate a DataFrame or tab separated file with the original table with the shRNA oligo design appended. 
+
+The input should be a tab sepparated table with circRNA back-splicing junction coordinates and gene names in the format: 
+
+Name Chr Start End
+
+This table can have an optional column with the Strand
+
+So far the following species are available: 
+fly: dm3, dm6 
+human: hs19, and hg38
+mice: mm10 
+rat: rn4
+
+# Requiered packages
+
+The following packages are required, here how to install it
+
+```
+install.packages("dplyr")
+install.packages("tidyr")
+BiocManager::install("Rsubread")
+BiocManager::install("GenomicFeatures")
+BiocManager::install("Biostrings")
+BiocManager::install("TxDb.Dmelanogaster.UCSC.dm6.ensGene")
+BiocManager::install("BSgenome.Dmelanogaster.UCSC.dm6")
+BiocManager::install("TxDb.Dmelanogaster.UCSC.dm3.ensGene")
+BiocManager::install("BSgenome.Dmelanogaster.UCSC.dm3")
+BiocManager::install("TxDb.Hsapiens.UCSC.hg19.knownGene")
+BiocManager::install("BSgenome.Hsapiens.UCSC.hg19")
+BiocManager::install("TxDb.Hsapiens.UCSC.hg38.knownGene")
+BiocManager::install("BSgenome.Hsapiens.UCSC.hg38")
+BiocManager::install("TxDb.Mmusculus.UCSC.mm10.knownGene")
+BiocManager::install("BSgenome.Mmusculus.UCSC.mm10")
+BiocManager::install("TxDb.Rnorvegicus.UCSC.rn4.ensGene")
+BiocManager::install("BSgenome.Rnorvegicus.UCSC.rn4")
+```
+
+# Run example
+
+Input should look like this
+```{r}
+head(read.delim("../test/circs_totest.txt"))
+```
+
+Run to create an output table
+```{r}
+OligoDesigner(input_coordinates = "../test/circs_totest.txt",output = "../test/New_out.tsv")
+```
+
+Run to create a DataFrame, if writetab = F
+```{r}
+oligos<-OligoDesigner(input_coordinates = "../test/circs_totest.txt",output = "../test/New_out.tsv",writetab = F)
+```
+
+Output
+```{r}
+head(oligos)
+```
+
+
