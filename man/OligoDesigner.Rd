@@ -35,7 +35,7 @@ Optional:a column named Strand
 So far the following species are available: fly: dm3, dm6 and human: hs19, mice: mm10 and rat: rn4
 }
 \examples{
-#There are examples in the folder names "../Test". To run it:
+
 OligoDesigner(input_coordinates = "../test/circs_totest.txt", writetab=F)
 
 

@@ -46,6 +46,13 @@ usethis::use_package("Rsubread")
 usethis::use_package("GenomicFeatures")
 usethis::use_package("Biostrings")
 
+#put on github
+usethis::git_sitrep()
+usethis::use_git()
+usethis::use_github()
+#usethis::create_from_github("ipatop/circRNAshRNAdesign", fork = FALSE)
+
+
 ###document###
 "Add roxygen comments to your .R files.
 Run devtools::document() to convert roxygen comments to .Rd files.
@@ -75,9 +82,4 @@ devtools::check()
 #license
 usethis::use_mit_license("Ines Patop")
 
-#put on github
-usethis::git_sitrep()
-usethis::use_git()
-usethis::use_github()
-#usethis::create_from_github("ipatop/circRNAshRNAdesign", fork = FALSE)
 

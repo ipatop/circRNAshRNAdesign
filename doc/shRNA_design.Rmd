@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 #install library
-#devtools::install_github("ipatop/circRNAshRNAdesign")
+devtools::install_github("ipatop/circRNAshRNAdesign")
 library(circRNAshRNAdesign)
 ```
 

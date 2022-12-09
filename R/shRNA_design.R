@@ -26,7 +26,7 @@
 #' @export
 #'
 #' @examples
-#' #There are examples in the folder names "../Test". To run it:
+#'
 #' OligoDesigner(input_coordinates = "../test/circs_totest.txt", writetab=F)
 #'
 #'
